@@ -1,0 +1,51 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:mykb;MODE=PostgreSQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: create-drop
+  flyway:
+    enabled: false
+
+app:
+  security:
+    jwt-secret: test-secret-key-with-sufficient-length-1234567890
+    token-ttl: PT1H
+    allowed-origins: http://localhost:3001
+  storage:
+    type: LOCAL
+    bucket: test-documents
+    local-base-dir: apps/server/target/test-storage
+    max-upload-size-bytes: 10485760
+  document:
+    allowed-file-extensions:
+      - pdf
+      - md
+      - markdown
+      - doc
+      - docx
+  dify:
+    enabled: true
+    base-url: http://127.0.0.1:8088/v1
+    api-key: test-api-key
+    app-api-key: test-app-api-key
+    dataset-permission: only_me
+    provider: vendor
+    indexing-technique: high_quality
+    poll-interval: PT0.01S
+    max-poll-attempts: 3
+    retrieval-top-k: 5
+    retrieval-min-score: 0.35
+    qa-context-max-chars: 4000
+    completion-timeout: PT5S
+    qa-sse-timeout: PT5S
+    qa-refusal-message: No sufficiently relevant knowledge snippets were found, so the system refuses to answer this question.
+  ocr:
+    enabled: true
+    base-url: http://127.0.0.1:8090
+    timeout: PT2S
+    pdf-content-type: application/pdf

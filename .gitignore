@@ -1,0 +1,15 @@
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+.env
+.m2repo/
+apps/server/target/
+apps/web/node_modules/
+apps/web/dist/
+
+logs/
+tmp/
+*.log
+*.err.log

@@ -1,0 +1,12 @@
+fastapi==0.115.12
+uvicorn[standard]==0.34.0
+python-multipart==0.0.20
+PyMuPDF==1.25.5
+Pillow==11.1.0
+numpy==2.2.4
+pyclipper==1.4.0
+Shapely==2.1.2
+PyYAML==6.0.3
+onnxruntime==1.24.4
+tqdm==4.67.3
+opencv-python-headless==4.13.0.92

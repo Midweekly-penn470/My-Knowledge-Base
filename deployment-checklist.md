@@ -1,0 +1,28 @@
+# Deployment Checklist
+
+- [ ] Server has Docker / Docker Compose / Nginx installed
+- [ ] Server runtime baseline is `Java 21`
+- [ ] `/srv/apps/my-knowledge-base/` has been created
+- [ ] `deploy/.env` has been filled with real values
+- [ ] `APP_JWT_SECRET` has been replaced with a strong random secret
+- [ ] PostgreSQL data path is confirmed
+- [ ] Redis persistence strategy is confirmed
+- [ ] MinIO account, bucket, and backup strategy are confirmed
+- [ ] Dify self-hosted base URL is confirmed
+- [ ] `DIFY_API_KEY` is confirmed for dataset / document APIs
+- [ ] `DIFY_APP_API_KEY` is confirmed for streaming QA
+- [ ] The Dify QA app input contract (`question`, `context`, `knowledge_base_name`) is configured
+- [ ] OCR internal service URL is confirmed
+- [ ] `DIFY_RETRIEVAL_*` and `DIFY_QA_*` runtime values are confirmed
+- [ ] `OCR_ENABLED` / `OCR_TIMEOUT` / `OCR_PDF_CONTENT_TYPE` are confirmed
+- [ ] `deploy/nginx/my-knowledge-base.conf` has been updated for the real domain
+- [ ] `chmod +x scripts/smoke.sh scripts/rehearse-linux.sh` has been executed on Linux
+- [ ] `nginx -t` has been executed successfully
+- [ ] `docker compose up -d --build` has been executed successfully
+- [ ] `curl http://127.0.0.1:8081/actuator/health` returns healthy
+- [ ] `curl http://127.0.0.1:8090/healthz` returns healthy when OCR is enabled
+- [ ] `bash ./scripts/smoke.sh --base-url http://127.0.0.1:8081` has passed on Linux
+- [ ] `bash ./scripts/smoke.sh --base-url http://127.0.0.1:8081 --run-ocr-check` has passed on Linux when OCR is enabled
+- [ ] `bash ./scripts/rehearse-linux.sh` has passed on Linux
+- [ ] Rollback image tag or previous release is prepared
+- [ ] Database and object storage backups are prepared
